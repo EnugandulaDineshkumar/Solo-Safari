@@ -1,0 +1,278 @@
+
+.next-level-container {
+    /* Full screen alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1f1f1f 0%, #0d0d0d 100%);
+    padding: 20px;
+    font-family: 'Inter', sans-serif; /* Recommended modern font */
+    color: #f0f0f0; /* Light text on dark background */
+}
+
+.next-level-trip-card {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    min-height: 400px;
+    background-color: #1e1e1e; /* Card background */
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 
+                0 0 10px rgba(66, 203, 172, 0.2); /* Subtle glow/shadow */
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.next-level-trip-card:hover {
+    /* Optional: subtle hover effect */
+    /* transform: translateY(-3px); */
+}
+
+.card-section {
+    padding: 40px;
+    flex: 1; /* Both sections take equal space */
+}
+
+/* --- Image Section Styling --- */
+
+.image-section-next-level {
+    flex: 1.5; /* Makes the image section a bit wider than the form */
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0d0d0d;
+    /* Ensure the content is centered within this container */
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+.trip-image-next-level {
+    /* Set width and height to 100% to fill the entire container */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    opacity: 0.5; /* Subtle, dark overlay effect */
+    transition: opacity 0.5s ease;
+}
+
+.image-section-next-level:hover .trip-image-next-level {
+    opacity: 0.6;
+}
+
+/* --- Form Section Styling --- */
+
+.form-section-next-level {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-title-next-level {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #42cbac; /* Accent color */
+}
+
+.card-title-next-level ** {
+    color: #f0f0f0;
+    font-weight: 800;
+}
+
+.subtitle-next-level {
+    font-size: 1rem;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.trip-form-next-level {
+    display: grid;
+    gap: 20px;
+}
+
+
+/* --- Trip Type Toggle (Solo/Group) --- */
+
+.trip-type-toggle-next-level {
+    display: flex;
+    margin-bottom: 30px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    padding: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.toggle-button {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #999;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggle-button:hover:not(.selected-next-level) {
+    color: #f0f0f0;
+}
+
+.toggle-button.selected-next-level {
+    background-color: #42cbac; /* Primary accent */
+    color: #1e1e1e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- Input Field Styling --- */
+
+.input-group-next-level {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-label-next-level {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #42cbac; /* Accent color for labels */
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-field-wrapper-next-level {
+    display: flex;
+    align-items: center;
+    background-color: #2c2c2c;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #3a3a3a;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field-wrapper-next-level:focus-within {
+    border-color: #42cbac;
+    box-shadow: 0 0 0 2px rgba(66, 203, 172, 0.3);
+}
+
+.input-icon-next-level {
+    padding: 10px 12px;
+    color: #42cbac;
+    font-size: 1.2rem;
+    border-right: 1px solid #3a3a3a;
+}
+
+.next-level-input,
+.next-level-textarea {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    background-color: transparent;
+    color: #f0f0f0;
+    font-size: 1rem;
+    outline: none;
+    width: 100%; /* Important for textarea */
+    resize: vertical; /* Allow vertical resizing for textarea */
+}
+
+.next-level-input::placeholder,
+.next-level-textarea::placeholder {
+    color: #666;
+}
+
+/* Fix for date inputs in Chrome/Edge, making text color readable */
+.next-level-input[type="date"] {
+    color-scheme: dark; 
+}
+
+
+.date-fields {
+    display: flex;
+    gap: 20px;
+}
+
+.date-fields > .input-group-next-level {
+    flex: 1;
+}
+
+/* --- Submit Button Styling --- */
+
+.submit-button-next-level {
+    padding: 15px 25px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #42cbac 0%, #30a588 100%);
+    color: #1e1e1e;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(66, 203, 172, 0.4);
+}
+
+.submit-button-next-level:hover {
+    background: linear-gradient(90deg, #30a588 0%, #42cbac 100%);
+    box-shadow: 0 6px 20px rgba(66, 203, 172, 0.6);
+}
+
+.submit-button-next-level:disabled,
+.submit-button-next-level.submitting {
+    background: #333;
+    color: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Loading Spinner for Submitting State */
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #1e1e1e;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* --- Responsive Design (Mobile adjustments) --- */
+
+@media (max-width: 900px) {
+    .next-level-trip-card {
+        flex-direction: column;
+        max-width: 500px;
+        min-height: auto;
+    }
+
+    .image-section-next-level {
+        height: 200px;
+        flex: none;
+    }
+
+    .card-section {
+        padding: 30px 20px;
+    }
+
+    .card-title-next-level {
+        font-size: 2rem;
+    }
+
+    .date-fields {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

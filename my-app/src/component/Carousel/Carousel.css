@@ -1,0 +1,104 @@
+.carousel-wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 30px 0;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px 20px;
+  width: 90%;
+}
+
+.carousel-container::-webkit-scrollbar {
+  height: 8px;
+}
+.carousel-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+}
+.carousel-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.carousel-item {
+  position: relative;
+  flex: 0 0 auto;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-item:hover {
+  transform: scale(1.1) translateY(-8px);
+  box-shadow: 0 8px 40px rgba(255, 255, 255, 0.3);
+}
+
+.carousel-image {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  filter: brightness(0.8);
+}
+
+.carousel-item:hover .carousel-image {
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.carousel-item:hover .carousel-caption {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+/* Glass hover glow effect */
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+ 
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.carousel-item:hover::before {
+  opacity: 1;
+  backdrop-filter: blur(4px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .carousel-image {
+    width: 140px;
+    height: 90px;
+  }
+  .carousel-caption {
+    font-size: 0.8rem;
+  }
+}

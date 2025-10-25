@@ -1,0 +1,126 @@
+/* ===============================
+   INSTRUCTIONS CAROUSEL - ADVANCED
+   =============================== */
+
+.carousel-main {
+  padding: 2rem;
+  background: linear-gradient(to bottom, #001, #024);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-size: coverssss;
+}
+
+.travel-Main-headings {
+  font-size: 2rem;
+  color: goldenrod;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.66);
+  margin-top: 90px;
+  margin-bottom: 20px;
+}
+
+/* Carousel Inner */
+.carousel-inner {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: gold;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  z-index: 10;
+}
+.nav-btn:hover {
+  background: rgba(255,215,0,0.8);
+  color: #001;
+}
+
+/* Carousel Cards Wrapper */
+.carousel-cards {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  flex: 1;
+  padding-bottom: 21%;
+}
+
+/* Each Card */
+.carousel-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  flex: 0 0 calc((100% - 2rem) / 3); /* default 3 cards */
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.carousel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(255,215,0,0.5);
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-content {
+  padding: 1rem;
+  text-align: left;
+}
+
+.card-content h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: gold;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: #fff;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Medium devices - 2 cards */
+@media (max-width: 1024px) {
+  .carousel-card {
+    flex: 0 0 calc((100% - 1rem) / 2);
+  }
+}
+
+/* Small devices - 1 card per view, stacked column */
+@media (max-width: 768px) {
+  .carousel-inner {
+    flex-direction: column;
+  }
+  .carousel-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .carousel-card {
+    flex: 1 0 100%;
+  }
+  .nav-btn {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+}

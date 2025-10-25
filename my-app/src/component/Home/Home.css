@@ -1,0 +1,115 @@
+.home-container {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.home-overlay {
+  background: linear-gradient(to top right, rgba(48, 47, 47, 0.75), rgba(0, 0, 0, 0.45));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  flex: 1;
+  text-align: center;
+}
+
+.home-content {
+  max-width: 700px;
+  color: #fff;
+  animation: fadeInUp 1.5s ease forwards;
+}
+.title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  padding-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  color: #c8ad11; /* Gold */
+  background: linear-gradient(45deg, #FFD700, #FF8C00, #FF4500);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #FF8C00, 0 0 30px #FF4500, 0 0 40px #FFA500;
+  animation: glow 2.5s ease-in-out infinite alternate, float 3s ease-in-out infinite;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Glowing text effect */
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FF8C00; }
+  50% { text-shadow: 0 0 20px #FFD700, 0 0 40px #FF8C00, 0 0 60px #FF4500; }
+  100% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FF8C00; }
+}
+
+/* Subtle floating motion */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+
+.subtitle {
+  font-size: 1.15rem;
+  font-weight: 300;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cta-button {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  color: #fff;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 25px rgba(255, 106, 0, 0.5);
+}
+
+.cta-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 106, 0, 0.8);
+  background: linear-gradient(90deg, #ee0979, #ff6a00);
+}
+
+/* Entrance animation */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+}
